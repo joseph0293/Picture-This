@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Picture This!</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -15,8 +15,51 @@
       <h1>Picture This!</h1>
       <h4>My Really Cool Blog Post</h4>
     </div>
-    <img src="images/museum.jpg" alt="placeholder">
+    <!-- <img src="images/museum.jpg" alt="placeholder"> -->
+    <picture>
 
+      <!-- From 1601px and above the following code applies -->
+      <source srcset="images/square-800.jpg 1x,
+                    images/square-1600.jpg 2x,
+                    images/square-2400.jpg 3x" media="(min-width: 1601)"/>
+
+      <!-- From 1281px to 1600px the following code applies -->
+      <source srcset="images/square-640.jpg 1x,
+                    images/square-1280.jpg 2x,
+                    images/square-1920.jpg 3x" media="(min-width: 1281)"/>
+
+      <!-- From 961px to 1280px the following code applies -->
+
+      <source srcset="images/square-480.jpg 1x,
+                    images/square-960.jpg 2x,
+                    images/square-1440.jpg 3x" media="(min-width: 961)"/>
+
+      <!-- Media query is written such that 0-960px=landscape image & 961px and above = square image -->
+      <!-- @media (min-width: 960px) -->
+
+      <!-- From 721px to 960px the following code applies -->
+      <source srcset="images/landscape-960.jpg 1x,
+                    images/landscape-1920.jpg 2x
+                    images/landscape-2880.jpg 3x" media="(min-width: 721)"/>
+
+      <!-- From 481px to 720px the following code applies -->
+
+      <!-- AT 720PX 1X=72px, 2X=1440px, 3x=2160px -->
+      <source srcset="images/landscape-720.jpg 1x,
+                    images/landscape-1440.jpg 2x,
+                    images/landscape-2160.jpg 3x" media="(min-width: 481)"/>
+
+      <!-- From 321px to 480px the following code applies -->
+      <source srcset="images/landscape-480.jpg 1x,
+                    images/landscape-960.jpg 2x,
+                    images/landscape-1440.jpg 3x" media="(min-width: 321px)" />
+
+      <!-- From 0px to 320px the following code applies -->
+      <source srcset="images/landscape-320.jpg 1x,
+                    images/landscape-640.jpg 2x,
+                    images/landscape-960.jpg 3x" media="(max-width: 320px)" />
+      <img class="orig-image" src="images/museum.jpg" alt="Museum">
+    </picture>
   </header>
 </body>
 
